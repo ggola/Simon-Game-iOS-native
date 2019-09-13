@@ -78,7 +78,7 @@ class GameVC: UIViewController, AVAudioPlayerDelegate {
         } else {
             if (counter == buttonSequence.count) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.setTitleLabel(with: "WELL DONE!", size: 30, color: UIColor.green)
+                    self.setTitleLabel(with: "YOU HERO!", size: 30, color: UIColor.green)
                     self.nextLevel()
                     self.enableButtons(state: true)
                 }
@@ -139,6 +139,7 @@ class GameVC: UIViewController, AVAudioPlayerDelegate {
         self.titleLabel.text = text
         self.titleLabel.font = UIFont(name: "PressStart2P-Regular", size: size)
         self.titleLabel.textColor = color
+        self.titleLabel.textAlignment = NSTextAlignment.center
     }
     
     private func gameOverLabel() -> NSAttributedString {
